@@ -1,5 +1,11 @@
 <div class="button" ng-click="main.showSidebar = true"></div>
 <div class="sidebar"
      ng-if="main.showSidebar"
-     ng-click="main.showSidebar = false"
+     action-on-click-outside="main.showSidebar = false"
+><span></span></div>
+
+<div class="button2" ng-click="main.showSidebar2 = true"></div>
+<div class="sidebar2"
+     ng-if="main.showSidebar2"
+     action-on-click-outside="main.showSidebar2 = false"
 ><span></span></div>
