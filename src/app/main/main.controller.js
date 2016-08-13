@@ -6,7 +6,7 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($timeout, webDevTec, toastr) {
+  function MainController($timeout, webDevTec, toastr, myPopup) {
     var vm = this;
 
     vm.awesomeThings = [];
@@ -14,6 +14,22 @@
     vm.creationDate = 1471101527290;
     vm.showSidebar = false;
     vm.showToastr = showToastr;
+
+    vm.showPopup = function () {
+      myPopup.open({
+        template: '<div>Hallo world' +
+        '<button ng-click="close(1)">1</button>' +
+        '<button ng-click="close(2)">2</button></div>',
+        controller: function() {},
+        resolve: {
+          testResolve: function($q) {
+            return $q.when(true)
+          }
+        }
+      }).then(function (data) {
+        alert(data);
+      })
+    };
 
     activate();
 

@@ -6,7 +6,8 @@
       'ngAnimate', 
       'ui.router', 
       'toastr',
-      'actionOnClickOutside'
+      'actionOnClickOutside',
+      'myPopup'
     ]);
 
 })();
