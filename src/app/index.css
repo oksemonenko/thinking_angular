@@ -153,3 +153,23 @@ hr {
   border: solid 1px darkgreen;
 }
 */
+
+.sidebar.ng-enter {
+  left: -200px;
+  transition-property: left;
+  transition-duration: 3s;
+}
+
+.sidebar.ng-enter-active {
+  left: 0;
+}
+
+.sidebar.ng-leave {
+  left: 0;
+  transition-property: left;
+  transition-duration: 3s;
+}
+
+.sidebar.ng-leave-active {
+  left: -200px !important;
+}

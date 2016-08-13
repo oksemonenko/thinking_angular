@@ -1,5 +1,5 @@
 angular.module('actionOnClickOutside', [])
-    .directive('actionOnClickOutside', function ($document) {
+    .directive('actionOnClickOutside', function ($document, $log) {
         return {
             restrict: 'A',
             link: function (scope, el, attrs) {
@@ -17,7 +17,12 @@ angular.module('actionOnClickOutside', [])
 
                 $document[0].addEventListener('click', listener, true);
                 el.on('$destroy', function() {
+                    $log.debug('Element destroyed');
                     $document[0].removeEventListener('click', listener, true)
+                });
+
+                scope.$on('$destroy', function() {
+                    $log.debug('Scope destroyed');
                 })
             }
         }
